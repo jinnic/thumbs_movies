@@ -186,3 +186,143 @@ Processing by MoviesController#index as */*
 Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1355)
 
 
+Started GET "/movies" for ::1 at 2020-12-04 21:56:54 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 1429)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 21:58:47 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1356)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 22:00:21 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"A Dog's Death", "imdbID"=>"tt10644688", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"A Dog's Death"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "A Dog's Death"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "imdb_id", "thumbs_up", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "A Dog's Death"], ["imdb_id", "tt10644688"], ["thumbs_up", 1], ["created_at", "2020-12-05 03:00:21.482063"], ["updated_at", "2020-12-05 03:00:21.482063"]]
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 3328)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 22:00:37 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"A Dog's Death", "imdbID"=>"tt10644688", "thumbs_type"=>"thumbs_down", "movie"=>{"title"=>"A Dog's Death"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "A Dog's Death"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_down" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_down", 1], ["updated_at", "2020-12-05 03:00:37.196310"], ["id", 5]]
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 6.7ms | Allocations: 3176)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 22:00:38 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"A Dog's Death", "imdbID"=>"tt10644688", "thumbs_type"=>"thumbs_down", "movie"=>{"title"=>"A Dog's Death"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "A Dog's Death"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+  [1m[36mMovie Update (6.8ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_down" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_down", 2], ["updated_at", "2020-12-05 03:00:38.061031"], ["id", 5]]
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:21:in `create'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 13.3ms | Allocations: 3176)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 22:00:38 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"A Dog's Death", "imdbID"=>"tt10644688", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"A Dog's Death"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "A Dog's Death"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[36mMovie Update (0.3ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_up" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_up", 2], ["updated_at", "2020-12-05 03:00:38.703940"], ["id", 5]]
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 3175)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 22:00:39 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"A Dog's Death", "imdbID"=>"tt10644688", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"A Dog's Death"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "A Dog's Death"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[36mMovie Update (0.3ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_up" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_up", 3], ["updated_at", "2020-12-05 03:00:39.085256"], ["id", 5]]
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 3175)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:00:39 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1487)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:00:41 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1487)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:00:46 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1487)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:00:56 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 56ms (Views: 8.5ms | ActiveRecord: 45.6ms | Allocations: 6908)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:01:04 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1505)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 22:01:12 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 6.3ms | Allocations: 6910)
+
+

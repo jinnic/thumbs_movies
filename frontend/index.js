@@ -1,29 +1,24 @@
 const loader = document.querySelector('#loader-view');
-loader.style.display = "none"
 
+//Table 
 const searchHeaders = ['#', 'Title', 'Release Year'];
 const movieDetailHeaders = ['Title', 'Director', 'Release Year','Description', 'Rate the movie'];
 const thumbsHeaders = ['Title',	'Thumbs Up',	'Thumbs Down']
 
 const table = document.querySelector('#movie-table');
 
-//Event Objects
+//Event 
 const searchForm = document.querySelector("#searchForm");
 const ratedMovieBtn = document.querySelector("#ratedMoviesBtn");
 
-
-const detailedView = document.querySelector("#detailed-view");
-const likesTable = document.querySelector("#likes-view");
-
-
-let sorted = false;
+loader.style.display = "none"
 table.classList.add('hide');
-// likesTable.classList.add('hide');
-// detailedView.classList.add('hide');
+
 
 //Event Listeners
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    clearTable();
     loader.style.display = "block"
     const searchQuery = e.currentTarget.movieTitle.value.replace(/[" "]/, "+");
     getMovies(searchQuery)
@@ -31,9 +26,11 @@ searchForm.addEventListener('submit', (e) => {
 
 ratedMovieBtn.addEventListener('click', showRatedMovies);
 
-//Event Handler
+//Event Handler 
+//Fetch rated movies - Rails API
 function showRatedMovies(){
-
+    clearTable();
+    loader.style.display = "block"
     fetch(`http://localhost:3000/movies`)
         .then(r => r.json())
         .then(response => {
@@ -55,6 +52,7 @@ const rapidapiObj = {
     }
 }
 
+//Fetch movies with title - RapidApi
 const getMovies = (searchQuery)=>{
     fetch(`https://movies-tvshows-data-imdb.p.rapidapi.com/?title=${searchQuery}&type=get-movies-by-title`, rapidapiObj)
     .then(r => r.json())
@@ -67,7 +65,10 @@ const getMovies = (searchQuery)=>{
     });
 }
 
+//Fetch movie details - RapidApi
 const getMovieDetail = (e) => {
+    e.preventDefault();
+    clearTable();
     loader.style.display = "block"
     const imdbID = e.currentTarget.dataset.imdb_id
     // console.log("imdbID : ", imdbID)
@@ -79,6 +80,7 @@ const getMovieDetail = (e) => {
         })
 }
 
+//Fetch & update thumbs rating - Rails API
 const  updateRating = (e)=>{
     e.preventDefault();
     const type = e.currentTarget.querySelector('i').className === 'fas fa-thumbs-down' ? 'thumbs_down' : 'thumbs_up';
@@ -98,13 +100,12 @@ const  updateRating = (e)=>{
     fetch(`http://localhost:3000/movies`, payLoad)
         .then(r => r.json())
         .then(response => {
-            console.log("updated thumbs : ", response)
+            // console.log("updated thumbs : ", response)
             updateThumbs(response)
         });
 }
 
 //Table functions    
-
 const updateTable =(searchQuery, head, movieData)=>{
     const tBody = table.querySelector('#table-body');
     //clear table
