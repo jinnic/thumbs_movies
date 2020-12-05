@@ -59,7 +59,7 @@ button:hover {
   color: white;
   font-size: 22px;
   align-self: center;
-  flex: 1 1 100%;
+  /* flex: 1 1 100%; */
   font-weight: bold;
   max-width: 30%;
 }
@@ -70,9 +70,8 @@ button:hover {
   text-align: center;
   font-size: 22px;
   align-self: center;
-  flex: 1 1 100%;
+  /* flex: 1 1 100%; */
   font-weight: bold;
-  max-width: 30%;
 }
 
 .app-nav {
@@ -96,31 +95,10 @@ button:hover {
   position: relative;
 }
 
-/* 
-
-table {
-  width: 95%;
-  margin: 0 auto;
-}
-table th {
-  margin: 1em;
-}
-td {
-  border: 1px solid #000;
-} */
-
-
-
-
-.likes {
-  margin: 1em;
-  font-size: 20px;
-  color: red;
-}
 
 /* Search Section */
 .search {
-  max-width: 40%;
+  max-width: 80%;
   margin: 50px auto 0;
 }
 #searchBtn{
