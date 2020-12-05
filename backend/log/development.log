@@ -129,3 +129,60 @@ Processing by MoviesController#index as */*
 Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 1.3ms | Allocations: 1294)
 
 
+Started POST "/movies" for ::1 at 2020-12-04 20:52:51 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"'Donnie Darko': Production Diary", "imdbID"=>"tt0437161", "thumbs_type"=>"thumbs_down", "movie"=>{"title"=>"'Donnie Darko': Production Diary"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "'Donnie Darko': Production Diary"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "imdb_id", "thumbs_down", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "'Donnie Darko': Production Diary"], ["imdb_id", "tt0437161"], ["thumbs_down", 1], ["created_at", "2020-12-05 01:52:51.667212"], ["updated_at", "2020-12-05 01:52:51.667212"]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 8.8ms | Allocations: 3333)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:52:52 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"'Donnie Darko': Production Diary", "imdbID"=>"tt0437161", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"'Donnie Darko': Production Diary"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "'Donnie Darko': Production Diary"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[36mMovie Update (0.8ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_up" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_up", 1], ["updated_at", "2020-12-05 01:52:52.712466"], ["id", 4]]
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 7.3ms | Allocations: 3196)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:52:53 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"'Donnie Darko': Production Diary", "imdbID"=>"tt0437161", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"'Donnie Darko': Production Diary"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "'Donnie Darko': Production Diary"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[36mMovie Update (0.4ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_up" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_up", 2], ["updated_at", "2020-12-05 01:52:53.466905"], ["id", 4]]
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.1ms | Allocations: 3177)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 20:52:55 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1355)
+
+

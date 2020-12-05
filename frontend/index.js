@@ -37,7 +37,7 @@ function showRatedMovies(){
     fetch(`http://localhost:3000/movies`)
         .then(r => r.json())
         .then(response => {
-            console.log("rated movies : ",response)
+            // console.log("rated movies : ",response)
             updateTable(response.title, thumbsHeaders, response)
 
         })
@@ -60,7 +60,7 @@ const getMovies = (searchQuery)=>{
     .then(r => r.json())
     .then(response => {
         updateTable(searchQuery,searchHeaders, response.movie_results)
-        console.log("movies : ",response.movie_results);
+        // console.log("movies : ",response.movie_results);
     })
     .catch(err => {
         console.error(err);
@@ -70,12 +70,12 @@ const getMovies = (searchQuery)=>{
 const getMovieDetail = (e) => {
     loader.style.display = "block"
     const imdbID = e.currentTarget.dataset.imdb_id
-    console.log("imdbID : ", imdbID)
+    // console.log("imdbID : ", imdbID)
     fetch(`https://movies-tvshows-data-imdb.p.rapidapi.com/?imdb=${imdbID}&type=get-movie-details`, rapidapiObj)
         .then(r => r.json())
         .then(response => {
             updateTable(response.title, movieDetailHeaders, [response])
-            console.log("movie details : ",response)
+            // console.log("movie details : ",response)
         })
 }
 
@@ -110,8 +110,6 @@ const updateTable =(searchQuery, head, movieData)=>{
     //clear table
     clearTable();
 
-    console.log(!movieData)
-    console.log(movieData)
     // when no movie is found send message
     // else generate table
     if (movieData.length === 0) {
