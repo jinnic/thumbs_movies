@@ -1,0 +1,74 @@
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tr th:first-child,
+tr td:first-child {
+  padding-left: 12px;
+}
+
+thead tr {
+  height: 32px;
+}
+
+thead tr th {
+  text-align: start;
+  font-weight: 800;
+  width: 7em;
+}
+
+tbody tr {
+  height: 40px;
+}
+
+tbody tr:nth-child(odd) {
+  background: white;
+}
+
+tbody tr:nth-child(even) {
+  background: #f1f1f1;
+}
+
+#movie-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 85%;
+  display: table;
+  margin: 20px auto 60px;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.movieDetailLink{
+  cursor: pointer;
+  color: blue;
+}
+
+.movieDetailLink:hover {
+  background: var(--select-color);
+  color: #f8f9fa;
+}
+
+/* Thumbs icon */
+.fa-thumbs-down{
+  font-size:1.3em;
+  color:var(--thumb-down-color); 
+  padding: 0 1em;
+  margin:.2em;
+}
+
+.fa-thumbs-down:hover{
+  color:var(--thumb-down-hover-color); 
+}
+
+
+.fa-thumbs-up{
+  font-size:1.3em;
+  padding: 0 1em;
+  color:var(--thumb-up-color); 
+  margin:.2em;
+}
+
+.fa-thumbs-up:hover{
+  color:var(--thumb-up-hover-color); 
+}

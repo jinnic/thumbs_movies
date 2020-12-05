@@ -1,0 +1,124 @@
+  [1m[35m (135.8ms)[0m  [1m[35mCREATE DATABASE "thumbs_movies_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (113.4ms)[0m  [1m[35mCREATE DATABASE "thumbs_movies_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (51.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (43.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6921222037455274815)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20201204043926)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (45.9ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "thumbs_up" integer DEFAULT 0, "thumbs_down" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201204043926"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-04 04:40:48.519054"], ["updated_at", "2020-12-04 04:40:48.519054"]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6921222037455274815)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6921222037455274815)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20201204043926)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (397.8ms)[0m  [1m[35mDROP TABLE "movies"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20201204043926"]]
+  [1m[35m (46.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6921222037455274815)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6921222037455274815)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20201204043926)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.6ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying, "imdb_id" character varying, "thumbs_up" integer DEFAULT 0, "thumbs_down" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201204043926"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6921222037455274815)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for ::1 at 2020-12-04 20:14:22 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (20.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 4.6ms | ActiveRecord: 21.8ms | Allocations: 1791)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:14:43 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"The Matrix Reloaded", "imdbID"=>"tt0234215", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"The Matrix Reloaded"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "The Matrix Reloaded"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "imdb_id", "thumbs_up", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Matrix Reloaded"], ["imdb_id", "tt0234215"], ["thumbs_up", 1], ["created_at", "2020-12-05 01:14:43.971036"], ["updated_at", "2020-12-05 01:14:43.971036"]]
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 45.1ms | Allocations: 9777)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:14:49 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"The Matrix Revisited", "imdbID"=>"tt0295432", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"The Matrix Revisited"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "The Matrix Revisited"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "imdb_id", "thumbs_up", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Matrix Revisited"], ["imdb_id", "tt0295432"], ["thumbs_up", 1], ["created_at", "2020-12-05 01:14:49.526085"], ["updated_at", "2020-12-05 01:14:49.526085"]]
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3317)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:14:49 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"The Matrix Revisited", "imdbID"=>"tt0295432", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"The Matrix Revisited"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "The Matrix Revisited"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[36mMovie Update (7.1ms)[0m  [1m[33mUPDATE "movies" SET "thumbs_up" = $1, "updated_at" = $2 WHERE "movies"."id" = $3[0m  [["thumbs_up", 2], ["updated_at", "2020-12-05 01:14:49.843167"], ["id", 2]]
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:19:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 8.1ms | Allocations: 3245)
+
+
+Started POST "/movies" for ::1 at 2020-12-04 20:15:37 -0500
+Processing by MoviesController#create as */*
+  Parameters: {"title"=>"Home Alone", "imdbID"=>"tt0099785", "thumbs_type"=>"thumbs_up", "movie"=>{"title"=>"Home Alone"}}
+[31mUnpermitted parameter: :movie[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = $1 LIMIT $2[0m  [["title", "Home Alone"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `create'
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+[31mUnpermitted parameter: :movie[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "imdb_id", "thumbs_up", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Home Alone"], ["imdb_id", "tt0099785"], ["thumbs_up", 1], ["created_at", "2020-12-05 01:15:37.278015"], ["updated_at", "2020-12-05 01:15:37.278015"]]
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 6.7ms | Allocations: 3300)
+
+
+Started GET "/movies" for ::1 at 2020-12-04 20:15:38 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1220)
+
+

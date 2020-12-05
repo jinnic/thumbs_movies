@@ -1,0 +1,203 @@
+:root {
+  --main-color: #f5c518;
+  --main-color-dark: #ac510b;
+  --nav-background: #39424e;
+  --select-color: #007bff;
+  --font-family-sans-serif: 'Nunito', sans-serif;
+  --font-color: #171b21;
+  --thumb-up-color: #3ef407;
+  --thumb-up-hover-color: #248d04;
+  --thumb-down-color: #6207f4;
+  --thumb-down-hover-color:#3b0691;
+}
+
+body {
+  font-family: var(--font-family-sans-serif) !important;
+  background: #f3f7f7;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+button {
+  cursor: pointer;
+  margin: 24px;
+  padding: 6px 12px;
+  color: var(--font-color);
+  outline: none;
+  border: 0;
+  border-radius: 0.2em;
+  float: right;
+  background: var(--main-color);
+  height: 2.5em;
+  min-width: 10em;
+}
+
+button:hover {
+  background: var(--main-color-dark);
+  color: #f8f9fa;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+/* Nav */
+.app-logo {
+  margin: 10px 24px;
+  color: white;
+  font-size: 22px;
+  align-self: center;
+  flex: 1 1 100%;
+  font-weight: bold;
+  max-width: 30%;
+}
+
+.app-title {
+  margin: 10px 24px;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  align-self: center;
+  flex: 1 1 100%;
+  font-weight: bold;
+  max-width: 30%;
+}
+
+.app-nav {
+  min-height: 60px;
+  line-height: 60px;
+  max-height: 64px;
+  display: flex;
+  flex-direction: row;
+  background: var(--nav-background);
+}
+
+.imdb_logo {
+  display: inline-flex;
+  align-self: center;
+}
+.imdb_logo svg {
+  height:1em;
+}
+.imdb_logo.baseline svg {
+  top: .125em;
+  position: relative;
+}
+
+/* 
+
+table {
+  width: 95%;
+  margin: 0 auto;
+}
+table th {
+  margin: 1em;
+}
+td {
+  border: 1px solid #000;
+} */
+
+
+
+
+.likes {
+  margin: 1em;
+  font-size: 20px;
+  color: red;
+}
+
+/* Search Section */
+.search {
+  max-width: 40%;
+  margin: 50px auto 0;
+}
+#searchBtn{
+  cursor: pointer;
+}
+#searchBtn:hover {
+  background: var(--main-color-dark);
+  color: #f8f9fa;
+}
+#searchForm{
+  position: relative;
+  display: inline-block;
+  flex: 4;
+  min-width: 40%;
+  color: #555;
+  margin: 2em 0;
+}
+
+input {
+  border: 0;
+  border-radius: 0.2em;
+  width: 71%;
+  height: 2.5em;
+  padding: 0 1em;
+}
+input[type="submit"] {
+  width: 20%;
+  height: 2.5em;
+  background-color: var(--main-color);
+  color: var(--font-color);
+}
+.search div{
+  /* flex: 1; */
+  margin: 2em;
+  font-size: 1.2em;
+}
+
+button#ratedMoviesBtn{
+  flex: 2;
+  margin: 2em 0;
+}
+
+
+/* Loader View*/
+
+#loader-view {
+  display: none;
+}
+
+.loader-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  display: flex;
+}
+
+.loader {
+  margin: 20px 20px;
+  border: 5px solid white; /* Light grey */
+  border-top: 5px solid var(--main-color); /* Blue */
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+#likes-view {
+  max-width: 55%;
+  margin: 0 auto;
+}
