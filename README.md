@@ -37,4 +37,4 @@ Open index.html
 ### Built with ###
 * [Frontend]: HTML, CSS, JavaScript
 * [Backend]: Ruby On Rails, PostgreSQL
-*[RapidAPI - Movies/TVShows Data (IMDB)](https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb?endpoint=apiendpoint_5a66709e-fc09-4a97-b6c9-07b895ca5187)
+* [RapidAPI - Movies/TVShows Data (IMDB)](https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb?endpoint=apiendpoint_5a66709e-fc09-4a97-b6c9-07b895ca5187)
