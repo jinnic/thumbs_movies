@@ -174,8 +174,3 @@ button#ratedMoviesBtn{
       transform: rotate(360deg);
   }
 }
-
-#likes-view {
-  max-width: 55%;
-  margin: 0 auto;
-}
