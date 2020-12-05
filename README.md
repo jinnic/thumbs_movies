@@ -5,6 +5,8 @@
   <img src="thumbs_movies_api.png">  
 </kbd>
 
+### About ###
+
 Thumbs Movie is small API saving your movie ratings. You can search movies from IMDb API and save one your raiting by thumbs up and thumbs down.
 
 ### Installation ###
